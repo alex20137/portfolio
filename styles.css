@@ -349,6 +349,27 @@ body {
   text-align: center;
 }
 
+.hero-avatar-wrapper {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.hero-avatar-img {
+  width: 144px;
+  height: 144px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border-highlight);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.25), 0 0 24px rgba(59, 130, 246, 0.18);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-avatar-img:hover {
+  transform: scale(1.05);
+  border-color: var(--accent-primary);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 32px rgba(59, 130, 246, 0.35);
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -1243,6 +1264,31 @@ body {
   border-color: rgba(10, 102, 194, 0.6);
   box-shadow: 0 12px 32px rgba(10, 102, 194, 0.18);
   transform: translateY(-2px);
+}
+
+.linkedin-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.linkedin-avatar-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0a66c2;
+  box-shadow: 0 4px 14px rgba(10, 102, 194, 0.25);
+  flex-shrink: 0;
+}
+
+.linkedin-profile-info {
+  flex-grow: 1;
+}
+
+.linkedin-profile-info .linkedin-card-badge {
+  margin-bottom: 4px;
 }
 
 .linkedin-card-badge {
