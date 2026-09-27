@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexandru Mihalcea-Calinescu | Economics, Finance & Computer Science</title>
+  <meta name="description" content="Portfolio of Alexandru Mihalcea-Calinescu - BSc Economics, Management & Computer Science at Università Bocconi. M&A corporate finance, quantitative research, and software engineering.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background decorative glow -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Alexandru Mihalcea-Calinescu Home">
+        <span class="logo-badge">AM</span>
+        <span class="logo-text">Alexandru M.</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#research" class="nav-link">Research</a>
+        <a href="#awards" class="nav-link">Awards</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#leadership" class="nav-link">Leadership</a>
+        <a href="#contact" class="nav-link nav-cta">Get in Touch</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn" title="Toggle Theme" aria-label="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button id="printBtn" class="icon-btn" title="Print / Export CV" aria-label="Print or Export CV">
+          <svg viewBox="0 0 24 24" width="19" height="19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>BSc in Economics, Management and Computer Science · Università Bocconi</span>
+        </div>
+
+        <h1 class="hero-title">
+          Alexandru <span class="gradient-text">Mihalcea-Calinescu</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          At the nexus of <strong>Corporate Finance (M&amp;A)</strong>, <strong>Quantitative Economics</strong>, and <strong>Computer Science</strong>. Experienced in company valuation and comparable analysis, macroeconomic modeling, and system architectures.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#experience" class="btn btn-primary">
+            <span>Explore Experience</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#research" class="btn btn-secondary">
+            <span>Read Authored Works</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+
+        <!-- Metrics Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-value">World Top 3</div>
+            <div class="metric-label">World Economics Cup 2025 (Individual Silver Award)</div>
+            <div class="metric-sub">Out of 2,502 competitors &amp; 428 teams</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">1500</div>
+            <div class="metric-label">SAT Score · 99th Percentile</div>
+            <div class="metric-sub">800 Reading &amp; Writing, 700 Math</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">M&amp;A Intern</div>
+            <div class="metric-label">PwC Corporate Finance</div>
+            <div class="metric-sub">Researched 20+ companies &amp; transaction multiples</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">5 Languages</div>
+            <div class="metric-label">English (IELTS 8.5) &amp; Romanian (Native)</div>
+            <div class="metric-sub">Spanish (B1), Portuguese, Italian</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Background &amp; Profile</span>
+          <h2 class="section-title">Synthesizing Financial Acumen with Computational Rigor</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-content card">
+            <h3 class="card-title">Interdisciplinary Analytical Mindset</h3>
+            <p>
+              I am currently pursuing a <strong>BSc in Economics, Management and Computer Science</strong> at <strong>Università Bocconi</strong> in Milan. My focus spans corporate valuation, macroeconomic policy impacts, and software engineering.
+            </p>
+            <p>
+              During my Corporate Finance &amp; M&amp;A internship at <strong>PwC Romania</strong>, I examined business models and financial statements across 20+ companies, conducting trading comparables and precedent transaction multiples. Complementing finance, I have conducted software engineering on university web platforms, run Android source builds, and authored economic and cognitive research.
+            </p>
+            <div class="contact-quick-bar">
+              <a href="mailto:alex.mihalcea12@gmail.com" class="contact-pill" title="Click to email">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <span>alex.mihalcea12@gmail.com</span>
+              </a>
+              <a href="tel:+40722237081" class="contact-pill" title="Click to call">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>+40 722 237 081</span>
+              </a>
+              <span class="contact-pill location">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Milan, Italy / Bucharest, Romania</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="pillars-stack">
+            <div class="pillar-card card">
+              <div class="pillar-icon">📈</div>
+              <div>
+                <h4>Corporate Finance &amp; Valuation</h4>
+                <p>M&amp;A research, trading comparables, precedent transactions, financial statement analysis, and board presentations.</p>
+              </div>
+            </div>
+            <div class="pillar-card card">
+              <div class="pillar-icon">🌐</div>
+              <div>
+                <h4>Quantitative &amp; Macro Economics</h4>
+                <p>Awarded Silver at World Economics Cup 2025; research in the economic impacts of digital restrictions.</p>
+              </div>
+            </div>
+            <div class="pillar-card card">
+              <div class="pillar-icon">💻</div>
+              <div>
+                <h4>Computing &amp; Systems</h4>
+                <p>Python data modeling, web applications, open-source operating systems, and Android custom builds.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Career Track</span>
+          <h2 class="section-title">Work Experience &amp; Professional Programmes</h2>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-bar" id="experienceFilters">
+          <button class="filter-btn active" data-filter="all">All Roles</button>
+          <button class="filter-btn" data-filter="finance">Corporate Finance &amp; M&amp;A</button>
+          <button class="filter-btn" data-filter="operations">Operations &amp; Logistics</button>
+          <button class="filter-btn" data-filter="tech">Software Development</button>
+        </div>
+
+        <div class="timeline" id="experienceTimeline">
+          <!-- Item 1: PwC -->
+          <div class="timeline-item" data-category="finance">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <div class="timeline-header">
+                <div>
+                  <span class="role-badge">Corporate Finance</span>
+                  <h3 class="role-title">M&amp;A Intern – Corporate Finance</h3>
+                  <div class="company-name">PwC Romania · Bucharest, Romania</div>
+                </div>
+                <div class="timeline-date">Oct 2025</div>
+              </div>
+              <ul class="bullet-list">
+                <li>Researched 20+ companies across multiple industries, rigorously examining business models, market positioning, competitive advantages, and financial performance.</li>
+                <li>Synthesised company research and quantitative analysis of trading comparables, precedent transaction multiples, historical trading data, and financial statements into high-impact PowerPoint presentations for senior Corporate Finance team members and engagement leads.</li>
+              </ul>
+              <div class="skill-tags">
+                <span class="tag">M&amp;A</span>
+                <span class="tag">Trading Comparables</span>
+                <span class="tag">Precedent Multiples</span>
+                <span class="tag">Financial Statements</span>
+                <span class="tag">Valuation</span>
+                <span class="tag">Executive Presentations</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Genpact -->
+          <div class="timeline-item" data-category="operations">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <div class="timeline-header">
+                <div>
+                  <span class="role-badge">Enterprise Operations</span>
+                  <h3 class="role-title">Operations Insight Programme</h3>
+                  <div class="company-name">Genpact · Bucharest, Romania</div>
+                </div>
+                <div class="timeline-date">Jun 2025</div>
+              </div>
+              <ul class="bullet-list">
+                <li>Reviewed enterprise-scale business workflows across order-to-cash (O2C), accounts payable (AP), payroll, contract administration, and vendor management.</li>
+                <li>Participated in strategic problem-solving and process efficiency sessions with senior operations leaders, analyzing operational bottlenecks and automation opportunities.</li>
+              </ul>
+              <div class="skill-tags">
+                <span class="tag">Order-to-Cash (O2C)</span>
+                <span class="tag">Accounts Payable</span>
+                <span class="tag">Vendor Management</span>
+                <span class="tag">Process Optimization</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: IB Cargo -->
+          <div class="timeline-item" data-category="operations">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <div class="timeline-header">
+                <div>
+                  <span class="role-badge">Global Logistics</span>
+                  <h3 class="role-title">Transportation and Logistics Insight Programme</h3>
+                  <div class="company-name">IB Cargo · Bucharest, Romania</div>
+                </div>
+                <div class="timeline-date">Jun 2024</div>
+              </div>
+              <ul class="bullet-list">
+                <li>Reviewed multimodal transportation and international supply-chain workflows through cross-departmental immersion covering freight forwarding and customs regulations.</li>
+                <li>Analyzed day-to-day operational challenges, shipping route optimization, and interdepartmental logistics coordination under dynamic market conditions.</li>
+              </ul>
+              <div class="skill-tags">
+                <span class="tag">Supply Chain</span>
+                <span class="tag">Freight Logistics</span>
+                <span class="tag">Cross-Departmental Ops</span>
+                <span class="tag">Workflow Optimization</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Eau de Web -->
+          <div class="timeline-item" data-category="tech">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content card">
+              <div class="timeline-header">
+                <div>
+                  <span class="role-badge">Software Engineering</span>
+                  <h3 class="role-title">Summer Intern – Software Development</h3>
+                  <div class="company-name">Eau de Web · Bucharest, Romania</div>
+                </div>
+                <div class="timeline-date">Jun 2023</div>
+              </div>
+              <ul class="bullet-list">
+                <li>Contributed to front-end and back-end development of a comprehensive university-advisory digital platform.</li>
+                <li>Engineered and styled user interfaces utilizing semantic HTML and responsive CSS, ensuring cross-device compatibility and intuitive user navigation.</li>
+              </ul>
+              <div class="skill-tags">
+                <span class="tag">Front-End Engineering</span>
+                <span class="tag">HTML5 / CSS3</span>
+                <span class="tag">Back-End Integration</span>
+                <span class="tag">UI/UX Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Authored Works / Research Section -->
+    <section id="research" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academic Papers</span>
+          <h2 class="section-title">Authored Works &amp; Independent Research</h2>
+          <p class="section-description">Deep-dive independent studies examining digital macroeconomics and cognitive computing interventions.</p>
+        </div>
+
+        <div class="research-grid">
+          <!-- Paper 1 -->
+          <div class="research-card card">
+            <div class="research-meta">
+              <span class="badge-accent">Macroeconomics &amp; Policy</span>
+              <span class="research-year">Authored Work</span>
+            </div>
+            <h3 class="research-title">An Investigation into Existing and Potential Economic Impacts of Internet Restrictions</h3>
+            <p class="research-excerpt">
+              A comprehensive inquiry examining how state-level or infrastructure-induced internet throttling and censorship affect modern economies, digital commerce trade flows, innovation velocity, and foreign direct investment (FDI).
+            </p>
+            <div class="research-highlights">
+              <div class="highlight-item">
+                <strong>Key Focus:</strong> Market frictions, digital supply-chain delays &amp; GDP loss estimation.
+              </div>
+              <div class="highlight-item">
+                <strong>Methodology:</strong> Multi-country comparative synthesis &amp; economic disruption models.
+              </div>
+            </div>
+            <button class="btn btn-secondary open-modal-btn" data-paper="internet">Read Research Abstract</button>
+          </div>
+
+          <!-- Paper 2 -->
+          <div class="research-card card">
+            <div class="research-meta">
+              <span class="badge-accent">Assistive Tech &amp; Neuroscience</span>
+              <span class="research-year">Authored Work</span>
+            </div>
+            <h3 class="research-title">To What Extent Can Playing an Educational Game Help People Struggling with Dyslexia?</h3>
+            <p class="research-excerpt">
+              An empirical and cognitive evaluation exploring the efficacy of interactive, gamified software mechanics in improving phonological awareness, visuo-spatial processing speed, and reading fluency for individuals with dyslexia.
+            </p>
+            <div class="research-highlights">
+              <div class="highlight-item">
+                <strong>Key Focus:</strong> Neurological neuroplasticity, engagement mechanics &amp; adaptive typography.
+              </div>
+              <div class="highlight-item">
+                <strong>Methodology:</strong> Cognitive assessment frameworks &amp; human-computer interaction (HCI) metrics.
+              </div>
+            </div>
+            <button class="btn btn-secondary open-modal-btn" data-paper="dyslexia">Read Research Abstract</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards & Honors Section -->
+    <section id="awards" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Recognition</span>
+          <h2 class="section-title">Awards &amp; International Competitions</h2>
+        </div>
+
+        <div class="awards-grid">
+          <div class="award-card card highlight-award">
+            <div class="award-trophy">🏆</div>
+            <div class="award-body">
+              <span class="award-badge">Global Competition</span>
+              <h3 class="award-title">World Economics Cup 2025</h3>
+              <p class="award-desc">
+                Achieved <strong>Continental Top-Three Team</strong> and <strong>Individual Silver Award</strong> at the International Final among <strong>428 teams and 2,502 competitors</strong> from 47 countries and regions.
+              </p>
+            </div>
+          </div>
+
+          <div class="award-card card">
+            <div class="award-trophy">📐</div>
+            <div class="award-body">
+              <span class="award-badge">Mathematics</span>
+              <h3 class="award-title">UKMT Senior Mathematical Challenge</h3>
+              <p class="award-desc">
+                Awarded <strong>Silver Award</strong> in the premier national high-school mathematics contest run by the United Kingdom Mathematics Trust.
+              </p>
+            </div>
+          </div>
+
+          <div class="award-card card">
+            <div class="award-trophy">🎖️</div>
+            <div class="award-body">
+              <span class="award-badge">Leadership &amp; Service</span>
+              <h3 class="award-title">Duke of Edinburgh's International Award</h3>
+              <p class="award-desc">
+                Earned both <strong>Silver and Bronze Awards</strong> for dedicated community service, physical endurance expeditions, skills development, and leadership.
+              </p>
+            </div>
+          </div>
+
+          <div class="award-card card">
+            <div class="award-trophy">🎓</div>
+            <div class="award-body">
+              <span class="award-badge">Academic Distinction</span>
+              <h3 class="award-title">Academic Honour Roll (4+ Years)</h3>
+              <p class="award-desc">
+                Sustained academic honor roll standing for over 4 consecutive years, reflecting continuous top-tier scholastic performance and intellectual rigor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academic Foundations</span>
+          <h2 class="section-title">Education &amp; Qualifications</h2>
+        </div>
+
+        <div class="education-grid">
+          <!-- Bocconi -->
+          <div class="edu-card card featured">
+            <div class="edu-header">
+              <div>
+                <span class="edu-tag">Undergraduate</span>
+                <h3 class="edu-institution">Università Bocconi</h3>
+                <div class="edu-degree">BSc in Economics, Management and Computer Science</div>
+              </div>
+              <div class="edu-meta">
+                <span class="edu-location">Milan, Italy</span>
+                <span class="edu-date">Sep 2026 – Present</span>
+              </div>
+            </div>
+            <p class="edu-desc">
+              Pioneering curriculum integrating quantitative economic modeling, corporate management principles, algorithmic game theory, data structures, and machine learning.
+            </p>
+          </div>
+
+          <!-- Avenor College -->
+          <div class="edu-card card">
+            <div class="edu-header">
+              <div>
+                <span class="edu-tag">British Curriculum</span>
+                <h3 class="edu-institution">Avenor College</h3>
+                <div class="edu-degree">A Levels &amp; IGCSE</div>
+              </div>
+              <div class="edu-meta">
+                <span class="edu-location">Bucharest, Romania</span>
+                <span class="edu-date">Completed Jun 2026</span>
+              </div>
+            </div>
+
+            <div class="qualifications-block">
+              <div class="qual-item">
+                <div class="qual-label">A Levels:</div>
+                <div class="qual-val">
+                  Economics (<strong>A</strong>), Mathematics (<strong>A</strong>), Computer Science (<strong>A</strong>), History (<strong>A</strong>), Extended Project Qualification / EPQ (<strong>A</strong>)
+                </div>
+              </div>
+              <div class="qual-item">
+                <div class="qual-label">IGCSE Results:</div>
+                <div class="qual-val">
+                  <strong>A* A* A* A* A* A A A (A)</strong> — 9 top-bracket qualifications
+                </div>
+              </div>
+              <div class="qual-item highlight-box">
+                <div class="qual-label">Standardized Testing:</div>
+                <div class="qual-val">
+                  <strong>SAT: 1500</strong> (99th percentile) · <strong>800 Reading &amp; Writing</strong>, <strong>700 Mathematics</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Languages Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Competencies</span>
+          <h2 class="section-title">Skills, Languages &amp; Technical Tools</h2>
+        </div>
+
+        <div class="skills-layout">
+          <!-- Languages Column -->
+          <div class="skills-column card">
+            <h3 class="skills-col-title">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span>Languages</span>
+            </h3>
+            
+            <div class="lang-cards-list">
+              <!-- English: Best Language -->
+              <div class="lang-card primary-lang">
+                <div class="lang-card-header">
+                  <div class="lang-name-group">
+                    <span class="lang-name">English</span>
+                    <span class="lang-best-badge">Best Language</span>
+                  </div>
+                  <span class="lang-status-pill">Fluent · IELTS 8.5 (C2)</span>
+                </div>
+                <div class="lang-card-desc">Primary working &amp; academic language</div>
+              </div>
+
+              <!-- Romanian -->
+              <div class="lang-card">
+                <div class="lang-card-header">
+                  <div class="lang-name-group">
+                    <span class="lang-name">Romanian</span>
+                  </div>
+                  <span class="lang-status-pill">Native</span>
+                </div>
+                <div class="lang-card-desc">Native tongue</div>
+              </div>
+
+              <!-- Spanish -->
+              <div class="lang-card">
+                <div class="lang-card-header">
+                  <div class="lang-name-group">
+                    <span class="lang-name">Spanish</span>
+                  </div>
+                  <span class="lang-status-pill">DELE B1</span>
+                </div>
+                <div class="lang-card-desc">Working &amp; conversational proficiency</div>
+              </div>
+
+              <!-- Portuguese -->
+              <div class="lang-card">
+                <div class="lang-card-header">
+                  <div class="lang-name-group">
+                    <span class="lang-name">Portuguese</span>
+                  </div>
+                  <span class="lang-status-pill">Intermediate</span>
+                </div>
+                <div class="lang-card-desc">Conversational competence</div>
+              </div>
+
+              <!-- Italian -->
+              <div class="lang-card">
+                <div class="lang-card-header">
+                  <div class="lang-name-group">
+                    <span class="lang-name">Italian</span>
+                  </div>
+                  <span class="lang-status-pill">Basic</span>
+                </div>
+                <div class="lang-card-desc">Developing in Milan (Università Bocconi)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical & Finance Skills -->
+          <div class="skills-column card">
+            <h3 class="skills-col-title">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>Technical &amp; Analytical Skills</span>
+            </h3>
+
+            <div class="skill-category">
+              <div class="cat-label">Financial &amp; Analysis</div>
+              <div class="chips-container">
+                <span class="chip">Corporate Valuation</span>
+                <span class="chip">Trading Comparables</span>
+                <span class="chip">Precedent Multiples</span>
+                <span class="chip">Financial Statements (Excel)</span>
+                <span class="chip">Macroeconomic Analysis</span>
+                <span class="chip">Executive Pitch Decks (PowerPoint)</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <div class="cat-label">Software, OS &amp; Hardware</div>
+              <div class="chips-container">
+                <span class="chip">Python</span>
+                <span class="chip">HTML5 / CSS3</span>
+                <span class="chip">Android Source Builds</span>
+                <span class="chip">Basic Device-Tree &amp; Kernel</span>
+                <span class="chip">Open-Source OS / Linux</span>
+                <span class="chip">Custom PC Architecture</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <div class="cat-label">Personal Interests &amp; Focus Areas</div>
+              <div class="chips-container interest-chips">
+                <span class="chip">🤖 Artificial Intelligence (AI)</span>
+                <span class="chip">🧠 Machine Learning</span>
+                <span class="chip">🏛️ Politics &amp; Policy</span>
+                <span class="chip">🖥️ Custom PC Building</span>
+                <span class="chip">🐧 Open-Source OS</span>
+                <span class="chip">📚 European History</span>
+                <span class="chip">⚽ Table Football</span>
+                <span class="chip">🏓 Table Tennis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership & Extracurricular Activities -->
+    <section id="leadership" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Impact &amp; Initiative</span>
+          <h2 class="section-title">Leadership &amp; Extracurricular Activities</h2>
+        </div>
+
+        <div class="activities-grid">
+          <!-- Christmas Fair -->
+          <div class="activity-card card">
+            <div class="activity-header">
+              <span class="activity-badge">Multi-Year Leadership</span>
+              <h3 class="activity-title">Christmas Fair Organisation Team</h3>
+              <div class="activity-role">Volunteer · Communications Coordinator · Finance Coordinator</div>
+            </div>
+            <ul class="bullet-list">
+              <li>Volunteered at inaugural fair, coordinating day-of crowd logistics and vendor booths.</li>
+              <li>Led corporate communications and sponsorship outreach for 4+ months during the subsequent cycle.</li>
+              <li>Directed comprehensive budgeting and financial administration during a subsequent 4+ month cycle, reconciling receipts, cashflow, and fund allocation.</li>
+            </ul>
+          </div>
+
+          <!-- TEDx & Business Challenge -->
+          <div class="activity-card card">
+            <div class="activity-header">
+              <span class="activity-badge">Production &amp; Strategy</span>
+              <h3 class="activity-title">TEDx Avenor &amp; Business Challenge</h3>
+              <div class="activity-role">Executive Production (2023) · Sponsorship Team Member</div>
+            </div>
+            <ul class="bullet-list">
+              <li>Executed live production logistics, stage management, and speaker coordination for TEDx Avenor 2023.</li>
+              <li>Served on the sponsorship and pitch committee for a fast-paced 24-hour business challenge, securing partner backing.</li>
+            </ul>
+          </div>
+
+          <!-- Public Sector Mobility & Forestry -->
+          <div class="activity-card card">
+            <div class="activity-header">
+              <span class="activity-badge">Public Sector &amp; Environment</span>
+              <h3 class="activity-title">Time to Play NGO &amp; Community Action</h3>
+              <div class="activity-role">Mobility Project Lead · Environmental Volunteer</div>
+            </div>
+            <ul class="bullet-list">
+              <li>Engaged in key civic discussions with the Romanian Ministry of Environment regarding an urban mobility project in Bucharest (2025).</li>
+              <li>Coordinated logistics for the Avenor Forest Run (2022) and participated in the Baneasa Forest clean-up initiatives (2023–2024).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-card card">
+          <div class="contact-info">
+            <span class="section-tag">Let's Connect</span>
+            <h2 class="contact-title">Interested in meeting me?</h2>
+            <p class="contact-text">
+              Interested in discussing M&amp;A, economics, or software projects? Let's connect. I am open to internship opportunities, research collaborations, and quantitative discussions across Milan, Bucharest, and remote environments.
+            </p>
+
+            <div class="contact-methods">
+              <!-- Gmail -->
+              <div class="contact-method-row">
+                <div class="method-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <div class="method-detail">
+                  <span class="method-label">Direct Gmail</span>
+                  <a href="mailto:alex.mihalcea12@gmail.com" class="method-val">alex.mihalcea12@gmail.com</a>
+                </div>
+                <button class="copy-btn" data-copy="alex.mihalcea12@gmail.com" title="Copy email">Copy</button>
+              </div>
+
+              <!-- Phone -->
+              <div class="contact-method-row">
+                <div class="method-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div class="method-detail">
+                  <span class="method-label">Phone / WhatsApp</span>
+                  <a href="tel:+40722237081" class="method-val">+40 722 237 081</a>
+                </div>
+                <button class="copy-btn" data-copy="+40722237081" title="Copy phone number">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured LinkedIn Card -->
+          <div class="linkedin-feature-card">
+            <div class="linkedin-card-badge">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              <span>Professional Network</span>
+            </div>
+            <h3 class="linkedin-name">Alexandru Mihalcea-Calinescu</h3>
+            <p class="linkedin-role">BSc in Economics, Management and Computer Science · Università Bocconi</p>
+            <p class="linkedin-summary">
+              Connect with me on LinkedIn to discuss corporate finance (M&amp;A), macroeconomic policy, software development, or prospective opportunities.
+            </p>
+            <a href="https://www.linkedin.com/in/alexandru-mihalcea-calinescu/" target="_blank" rel="noopener noreferrer" class="btn btn-primary linkedin-connect-btn">
+              <span>Connect on LinkedIn</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <strong>Alexandru Mihalcea-Calinescu</strong>
+        <p>BSc in Economics, Management and Computer Science · Università Bocconi</p>
+      </div>
+      <div class="footer-right">
+        <a href="#hero">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Dialog for Research Papers -->
+  <div class="modal-backdrop" id="researchModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-box card">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <div id="modalContent">
+        <!-- Injected dynamically via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toastNotification" role="alert"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
