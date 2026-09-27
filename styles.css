@@ -381,7 +381,37 @@ body {
   color: var(--badge-text);
   font-size: 0.875rem;
   font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.hero-sub-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 24px;
+}
+
+.sub-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.775rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+[data-theme="light"] .sub-badge {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.sub-badge:hover {
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  transform: translateY(-1px);
 }
 
 .pulse-dot {
@@ -995,6 +1025,91 @@ body {
   color: var(--badge-text);
 }
 
+.bocconi-societies-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.society-highlight-card {
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+[data-theme="light"] .society-highlight-card {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.society-highlight-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.soc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.soc-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.soc-pill.ml {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.soc-pill.ai {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.soc-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.soc-title {
+  font-size: 0.975rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.soc-role {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-secondary);
+  margin-bottom: 6px;
+}
+
+[data-theme="light"] .soc-role {
+  color: var(--accent-primary);
+}
+
+.soc-desc {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* ==========================================================================
    Skills Section
    ========================================================================== */
@@ -1109,6 +1224,13 @@ body {
   transform: translateY(-1px);
 }
 
+.chip.highlight-chip {
+  background: var(--badge-bg);
+  border-color: var(--badge-border);
+  color: var(--badge-text);
+  font-weight: 600;
+}
+
 .interest-chips .chip {
   font-size: 0.85rem;
 }
@@ -1128,6 +1250,11 @@ body {
   flex-direction: column;
 }
 
+.featured-society-card {
+  border-color: var(--border-highlight);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(59, 130, 246, 0.05) 100%);
+}
+
 .activity-badge {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;
@@ -1135,6 +1262,22 @@ body {
   color: var(--accent-secondary);
   margin-bottom: 6px;
   text-transform: uppercase;
+}
+
+.activity-badge.ml-badge {
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.12);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.activity-badge.ai-badge {
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.12);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(168, 85, 247, 0.25);
 }
 
 [data-theme="light"] .activity-badge {
