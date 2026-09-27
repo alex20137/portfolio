@@ -1018,11 +1018,6 @@ body {
   transform: translateY(-2px);
 }
 
-.lang-card.primary-lang {
-  border-color: rgba(59, 130, 246, 0.4);
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
-}
-
 .lang-card-header {
   display: flex;
   justify-content: space-between;
@@ -1030,28 +1025,9 @@ body {
   margin-bottom: 4px;
 }
 
-.lang-name-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
 .lang-name {
   font-weight: 700;
   font-size: 0.975rem;
-}
-
-.lang-best-badge {
-  font-size: 0.675rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 2px 8px;
-  border-radius: var(--radius-full);
-  background: var(--badge-bg);
-  border: 1px solid var(--badge-border);
-  color: var(--badge-text);
 }
 
 .lang-status-pill {
@@ -1064,10 +1040,8 @@ body {
   color: var(--text-secondary);
 }
 
-.primary-lang .lang-status-pill {
-  background: var(--badge-bg);
-  color: var(--badge-text);
-  border-color: var(--badge-border);
+[data-theme="light"] .lang-status-pill {
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .lang-card-desc {
