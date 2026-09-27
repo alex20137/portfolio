@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     dyslexia: {
-      badge: "HPQ Project · Unity 3D & C#",
+      badge: "HPQ · Grade A · Unity & C#",
       title: ".XIA: To What Extent Can Playing an Educational Game Help People Struggling with Dyslexia?",
       author: "Alexandru Mihalcea-Calinescu (with Tudor Bunescu & Andrei Ghigea)",
       pdfUrl: "docs/HPQ_Dyslexia_Educational_Game.pdf",
