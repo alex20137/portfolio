@@ -193,7 +193,7 @@
               I am a first-year student studying <strong>Economics, Management and Computer Science</strong> at <strong>Università Bocconi</strong> in Milan. Prior to Bocconi, I completed my British Curriculum A Levels at Avenor College in Bucharest with straight As in Economics, Mathematics, Computer Science, History, and an Extended Project Qualification (EPQ) analyzing the economic costs of government internet blackouts.
             </p>
             <p>
-              My background combines corporate finance and technical development. At <strong>PwC Romania</strong>, I worked as an M&amp;A intern researching business models and financial statements across 20+ companies to build trading comps and precedent transaction decks. I have also completed insight programmes at <strong>Genpact</strong> and <strong>IB Cargo</strong>, developed web front-ends at <strong>Eau de Web</strong>, built educational software in Unity (C#), and authored research in economics and accessibility. At Bocconi, I actively participate in student technical societies including <strong>BSML</strong> (Bocconi Students for Machine Learning) and <strong>Hephaestus</strong> (Applied AI Association).
+              My background combines corporate finance and technical development. At <strong>PwC Romania</strong>, I worked as an M&amp;A intern researching business models and financial statements across 20+ companies to build trading comps and precedent transaction decks. I have also completed insight programmes at <strong>Genpact</strong> and <strong>IB Cargo</strong>, developed web front-ends at <strong>Eau de Web</strong>, built assistive accessibility software (FocusAid) for the BAINSA Hackathon 2026, developed educational software in Unity3D (C#), and authored research in economics and accessibility. At Bocconi, I actively participate in student technical societies including <strong>BSML</strong> (Bocconi Students for Machine Learning) and <strong>Hephaestus</strong> (Applied AI Association).
             </p>
             <div class="contact-quick-bar">
               <a href="mailto:alex.mihalcea12@gmail.com" class="contact-pill" title="Click to email">
@@ -229,8 +229,8 @@
             <div class="pillar-card card">
               <div class="pillar-icon">💻</div>
               <div>
-                <h4>Software &amp; Game Development</h4>
-                <p>Python data work, Unity (C#) educational game development, and web front-ends with HTML/CSS.</p>
+                <h4>Software &amp; AI Engineering</h4>
+                <p>FocusAid in-browser AI platform (Next.js, WebGPU, MediaPipe), Unity3D (C#) game development, and Python data pipelines.</p>
               </div>
             </div>
           </div>
@@ -400,19 +400,19 @@
           <!-- Paper 2: HPQ Dyslexia Game -->
           <div class="research-card card">
             <div class="research-meta">
-              <span class="badge-accent">HPQ · Grade A · Unity &amp; C#</span>
+              <span class="badge-accent">HPQ · Grade A · Unity3D &amp; C#</span>
               <span class="research-year">Completed 2024</span>
             </div>
             <h3 class="research-title">.XIA: To What Extent Can Playing an Educational Game Help People Struggling with Dyslexia?</h3>
             <p class="research-excerpt">
-              A software project and study developed in Unity (C#) with Tudor Bunescu and Andrei Ghigea. Adapts Flappy Bird 2D mechanics combined with checkpoint letter-unscrambling challenges from a 496-word dictionary to train spelling and phonological recall in dyslexic children without inducing boredom.
+              A software project and study developed in Unity3D (C#) with Tudor Bunescu and Andrei Ghigea. Adapts Flappy Bird mechanics combined with checkpoint letter-unscrambling challenges from a 496-word dictionary to train spelling and phonological recall in dyslexic children without inducing boredom.
             </p>
             <div class="research-highlights">
               <div class="highlight-item">
                 <strong>Dyslexia UI &amp; Accessibility:</strong> Incorporates ACM SIGACCESS research (Rello &amp; Bigham, 2017) using warm yellow-to-orange backgrounds and yellow icon frames to enhance readability and reduce blue-light circadian disruption. Features Scrabble-style drag-and-drop tiles and calming low-volume instrumental audio.
               </div>
               <div class="highlight-item">
-                <strong>Technical Stack:</strong> Unity 2D engine with compiled C# code for smooth performance on lower-spec hardware.
+                <strong>Technical Stack:</strong> Unity3D engine with compiled C# code for smooth performance on lower-spec hardware.
               </div>
             </div>
             <div class="essay-action-group">
@@ -428,6 +428,33 @@
               <a href="docs/XIA_Gameplay_Demo.mp4" target="_blank" class="btn btn-outline essay-download-btn" title="Watch gameplay video">
                 <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 <span>Gameplay Video</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3: FocusAid (BAINSA Hackathon 2026) -->
+          <div class="research-card card">
+            <div class="research-meta">
+              <span class="badge-accent">Hackathon · AI &amp; Next.js</span>
+              <span class="research-year">2026</span>
+            </div>
+            <h3 class="research-title">FocusAid: In-Browser AI Learning Accessibility &amp; Attention Assistant</h3>
+            <p class="research-excerpt">
+              An AI learning accessibility platform built during the <strong>BAINSA Hackathon 2026</strong>. Assists neurodivergent and distracted students through real-time attention tracking via MediaPipe (no video data leaves the browser), time-indexed lecture captions, one-click "Catch Me Up" AI summaries, and client-side on-device LLM inference via WebGPU (<code>@mlc-ai/web-llm</code>).
+            </p>
+            <div class="research-highlights">
+              <div class="highlight-item">
+                <strong>Edge AI &amp; Privacy:</strong> Runs local LLMs directly inside the browser using WebGPU acceleration, combined with in-browser MediaPipe facial landmark tracking for private, non-invasive attention analytics.
+              </div>
+              <div class="highlight-item">
+                <strong>Technical Stack:</strong> Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS, MediaPipe tasks-vision, WebLLM, and Anthropic SDK.
+              </div>
+            </div>
+            <div class="essay-action-group">
+              <button class="btn btn-secondary open-modal-btn" data-paper="focusaid">Read Architecture &amp; Demo</button>
+              <a href="https://github.com/AurelianVIII/BAINSA-Hackathon-2026" target="_blank" rel="noopener noreferrer" class="btn btn-primary essay-download-btn">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                <span>View on GitHub</span>
               </a>
             </div>
           </div>
@@ -548,7 +575,7 @@
               <div class="qual-item">
                 <div class="qual-label">Technical &amp; STEM Qualifications:</div>
                 <div class="qual-val">
-                  Computer Science A Level (<strong>Grade A</strong>) · Mathematics A Level (<strong>Grade A</strong>) · HPQ Software Project in Unity/C# (<strong>Grade A</strong>)
+                  Computer Science A Level (<strong>Grade A</strong>) · Mathematics A Level (<strong>Grade A</strong>) · HPQ Software Project in Unity3D/C# (<strong>Grade A</strong>)
                 </div>
               </div>
               <div class="qual-item">
@@ -652,9 +679,11 @@
               <div class="chips-container">
                 <span class="chip">Python</span>
                 <span class="chip">C#</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">Next.js</span>
                 <span class="chip">HTML5 / CSS3</span>
                 <span class="chip">JavaScript</span>
-                <span class="chip">Unity 2D Engine</span>
+                <span class="chip">Unity3D Engine</span>
                 <span class="chip">Git &amp; GitHub</span>
               </div>
             </div>
@@ -664,6 +693,7 @@
               <div class="cat-label">Systems, Hardware &amp; OS Architecture</div>
               <div class="chips-container">
                 <span class="chip">Linux / Open-Source OS</span>
+                <span class="chip">WebGPU &amp; Client ML</span>
                 <span class="chip">Android Source Builds</span>
                 <span class="chip">Kernel &amp; Device-Tree Configuration</span>
                 <span class="chip">Custom PC Hardware Architecture</span>

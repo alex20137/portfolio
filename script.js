@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     dyslexia: {
-      badge: "HPQ · Grade A · Unity & C#",
+      badge: "HPQ · Grade A · Unity3D & C#",
       title: ".XIA: To What Extent Can Playing an Educational Game Help People Struggling with Dyslexia?",
       author: "Alexandru Mihalcea-Calinescu (with Tudor Bunescu & Andrei Ghigea)",
       pdfUrl: "docs/HPQ_Dyslexia_Educational_Game.pdf",
@@ -131,15 +131,39 @@ document.addEventListener('DOMContentLoaded', () => {
       sections: [
         {
           heading: "Problem & Educational Premise",
-          text: "Traditional literacy and spelling drills often induce boredom and reading avoidance in children with dyslexia. The project tests whether an intuitive, lightweight 2D educational game can maintain high engagement and improve spelling recall through low-stress interactive mechanics."
+          text: "Traditional literacy and spelling drills often induce boredom and reading avoidance in children with dyslexia. The project tests whether an intuitive, lightweight educational game can maintain high engagement and improve spelling recall through low-stress interactive mechanics."
         },
         {
           heading: "Game Mechanics & Learning Payload",
-          text: "Built in Unity 3D / 2D using compiled C#. The game adapts Flappy Bird flight controls (using spacebar or touch controls to navigate between obstacles). Checkpoints deliver a learning payload: the algorithm pulls a word from an array of 496 common 5-letter words, splices the word into individual scrambled letter tiles, and prompts the child to drag and drop the tiles into the correct sequence. The algorithm validates the spelling before allowing the player to advance. High score tracking is saved on Game Over screens to motivate self-improvement."
+          text: "Built in Unity3D using compiled C#. The game adapts Flappy Bird flight controls (using spacebar or touch controls to navigate between obstacles). Checkpoints deliver a learning payload: the algorithm pulls a word from an array of 496 common 5-letter words, splices the word into individual scrambled letter tiles, and prompts the child to drag and drop the tiles into the correct sequence. The algorithm validates the spelling before allowing the player to advance. High score tracking is saved on Game Over screens to motivate self-improvement."
         },
         {
           heading: "Dyslexia-Focused UI & Cognitive Design",
-          text: "• Color Ergonomics: Warm yellow-to-orange background gradient and yellow icon frames were chosen based on ACM SIGACCESS 2017 research by Luz Rello & Jeffrey Bigham ('Good Background Colors for Readers'), helping dyslexic readers perceive text more easily while mitigating blue-light circadian disruption.<br><br>• Visual Contrast: A bright blue bird sprite provides high visual contrast against the warm scene.<br><br>• Letter Tiles: Scrabble-style letter tiles with drag-and-drop mechanics reduce technical supervision and cognitive overhead.<br><br>• Calming Audio: Uses a low-volume royalty-free instrumental soundtrack (classical pop) to calm players and enhance concentration, paired with gentle parallax background scrolling.<br><br>• Performance: Written in compiled C# for smooth framerates on lower-spec hardware."
+          text: "• Color Ergonomics: Warm yellow-to-orange background gradient and yellow icon frames were chosen based on ACM SIGACCESS 2017 research by Luz Rello & Jeffrey Bigham ('Good Background Colors for Readers'), helping dyslexic readers perceive text more easily while mitigating blue-light circadian disruption.<br><br>• Visual Contrast: A bright blue bird sprite provides high visual contrast against the warm scene.<br><br>• Letter Tiles: Scrabble-style letter tiles with drag-and-drop mechanics reduce technical supervision and cognitive overhead.<br><br>• Calming Audio: Uses a low-volume royalty-free instrumental soundtrack (classical pop) to calm players and enhance concentration, paired with gentle parallax background scrolling.<br><br>• Performance: Written in compiled C# in Unity3D for smooth framerates on lower-spec hardware."
+        }
+      ]
+    },
+    focusaid: {
+      badge: "BAINSA Hackathon 2026 · AI & Next.js",
+      title: "FocusAid: Real-Time In-Browser AI Learning Accessibility Platform",
+      author: "Alexandru Mihalcea-Calinescu & Hackathon Team",
+      githubUrl: "https://github.com/AurelianVIII/BAINSA-Hackathon-2026",
+      sections: [
+        {
+          heading: "Problem & Accessibility Mission",
+          text: "Students with attention difficulties, auditory processing challenges, or cognitive fatigue often fall behind during live or recorded lectures. FocusAid acts as an intelligent accessibility bridge by identifying moments when a student is distracted or confused and providing frictionless catch-up tools."
+        },
+        {
+          heading: "Privacy-Preserving Edge AI & Face Tracking",
+          text: "Educational environments demand zero surveillance risk. FocusAid uses Google MediaPipe (tasks-vision) to run facial landmark and gaze orientation tracking entirely client-side. No webcam video feeds or biometric vectors ever leave the student's browser. Attention dips generate non-punitive timeline recovery markers."
+        },
+        {
+          heading: "WebGPU Local LLMs & 'Catch Me Up' Engine",
+          text: "Integrates on-device LLM inference via WebGPU using <code>@mlc-ai/web-llm</code>. When students tap 'Catch Me Up', the local model reads timestamped caption transcript embeddings to produce concise, third-person summaries of missed concepts, freeing students from taking exhaustive notes while listening."
+        },
+        {
+          heading: "Full-Stack Implementation & Repository",
+          text: "Engineered with Next.js 16 (App Router), React 19, TypeScript, and Tailwind CSS with atomic components, attention timeline scoring algorithms, and robust edge-case guards.<br><br>Inspect the complete open-source implementation and codebase directly on GitHub: <a href='https://github.com/AurelianVIII/BAINSA-Hackathon-2026' target='_blank' rel='noopener noreferrer' style='color: var(--accent-secondary); text-decoration: underline;'>github.com/AurelianVIII/BAINSA-Hackathon-2026</a>."
         }
       ]
     }
@@ -158,17 +182,32 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         `).join('');
 
-        let attachmentsHTML = `
-          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+        let actionButtonsHTML = '';
+        if (data.pdfUrl) {
+          actionButtonsHTML += `
             <a href="${data.pdfUrl}" target="_blank" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
               <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               <span>Read Full Essay (PDF)</span>
-            </a>
-            ${data.buildsUrl ? `
+            </a>`;
+        }
+        if (data.githubUrl) {
+          actionButtonsHTML += `
+            <a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              <span>View Repository on GitHub</span>
+            </a>`;
+        }
+        if (data.buildsUrl) {
+          actionButtonsHTML += `
             <a href="${data.buildsUrl}" download class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">
               <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               <span>Download Builds.zip (Mac &amp; Win)</span>
-            </a>` : ''}
+            </a>`;
+        }
+
+        let attachmentsHTML = `
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+            ${actionButtonsHTML}
           </div>
           ${data.videoUrl ? `
           <div style="margin-bottom: 24px;">
