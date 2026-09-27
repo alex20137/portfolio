@@ -126,6 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
       title: ".XIA: To What Extent Can Playing an Educational Game Help People Struggling with Dyslexia?",
       author: "Alexandru Mihalcea-Calinescu (with Tudor Bunescu & Andrei Ghigea)",
       pdfUrl: "docs/HPQ_Dyslexia_Educational_Game.pdf",
+      buildsUrl: "docs/Builds.zip",
+      videoUrl: "docs/XIA_Gameplay_Demo.mp4",
       sections: [
         {
           heading: "Problem & Educational Premise",
@@ -156,16 +158,33 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         `).join('');
 
+        let attachmentsHTML = `
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+            <a href="${data.pdfUrl}" target="_blank" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Read Full Essay (PDF)</span>
+            </a>
+            ${data.buildsUrl ? `
+            <a href="${data.buildsUrl}" download class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download Builds.zip (Mac &amp; Win)</span>
+            </a>` : ''}
+          </div>
+          ${data.videoUrl ? `
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--accent-secondary);">Gameplay Demo Video</h4>
+            <video controls playsinline preload="metadata" style="width: 100%; max-height: 420px; border-radius: 12px; border: 1px solid var(--border-color); background: #000;">
+              <source src="${data.videoUrl}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>` : ''}
+        `;
+
         modalContent.innerHTML = `
           <span class="modal-header-badge">${data.badge}</span>
           <h3 class="modal-article-title">${data.title}</h3>
           <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">By <strong>${data.author}</strong></p>
-          <div style="margin-bottom: 20px;">
-            <a href="${data.pdfUrl}" target="_blank" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
-              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              <span>Download Full Attached Essay (PDF)</span>
-            </a>
-          </div>
+          ${attachmentsHTML}
           ${sectionsHTML}
         `;
 
@@ -177,6 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const closeModal = () => {
     if (researchModal) {
+      const video = researchModal.querySelector('video');
+      if (video) video.pause();
       researchModal.classList.remove('open');
       researchModal.setAttribute('aria-hidden', 'true');
     }
