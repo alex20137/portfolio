@@ -102,40 +102,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const researchPapers = {
     internet: {
-      badge: "Macroeconomics & Digital Policy",
+      badge: "EPQ (A Level) · Grade A",
       title: "An Investigation into Existing and Potential Economic Impacts of Internet Restrictions",
       author: "Alexandru Mihalcea-Calinescu",
+      pdfUrl: "docs/EPQ_Internet_Restrictions.pdf",
       sections: [
         {
-          heading: "Abstract & Context",
-          text: "In an increasingly interconnected global economy, internet availability serves as essential capital infrastructure for international trade, commerce, and knowledge dissemination. This paper evaluates the quantitative and qualitative consequences of state-level network restrictions, shutdown events, and digital fragmentation on gross domestic product (GDP), entrepreneurial activity, and investor confidence."
+          heading: "Core Research Questions & Scope",
+          text: "This paper evaluates intentional government-sanctioned internet shutdowns across Russia, Sudan, Iran, Bangladesh, India, and China by addressing three key variables: the extent of the restriction (population and industries affected), the nature and motivation (warfare, political suppression, protectionism), and the severity (full blackouts vs. 2G throttling vs. selective service bans)."
         },
         {
-          heading: "Key Methodological Findings",
-          text: "Synthesizing cross-national economic disruption datasets with macroeconomic gravity trade models, the study highlights how recurring digital throttling increases search and transaction costs, stifles foreign direct investment (FDI), and disproportionately penalizes micro, small, and medium enterprises (MSMEs) dependent on global payment rails."
+          heading: "Key Empirical Case Studies",
+          text: "• Bangladesh (July 2024): The 5-day blackout caused $1.2B in economic losses. Crucially, the biggest casualty was the non-digital garment export sector, proving that physical manufacturing and supply chains suffer immense damage. In addition, e-commerce and f-commerce lost $5M/day, call centers lost $3M/day risking international client outsourcing, and banks incurred interest penalties on delayed settlements.<br><br>• Iran (2022–2023): A 17-month social media ban and intermittent blackouts cost $1.6B ($1.5M/hour). Digital payment volume through gateways like Zibal and Zarin Pal dropped 55–60%. The Instagram ban alone closed over 500,000 small businesses, impacting 1M people directly and 8M indirectly, sparking structural unemployment.<br><br>• India (Kashmir 2019–2021): A 500-day 4G shutdown throttled speeds to 2G, rendering data virtually useless. The Travel Association of Kashmir reported severe destruction to the tourism economy, and local online delivery platforms (KartFood, Kashmiri Box) folded. Crucially, NREGA workers (100M rural households, 58% women) could not receive wages or work because government attendance required online geotagged photos twice a day. Residents had to board trains to Banihal just for 5 minutes of connectivity to submit official documents and tender bids.<br><br>• Sudan (Feb 2024): The Rapid Support Forces (RSF) and Sudanese Armed Forces (SAF) seized ISPs during the civil war, cutting off 4.8 million people for 212 hours. Paralyzed e-wallets and wire transfers in a cash-starved economy, inflicting irreversible setbacks on the growing tertiary/services sector.<br><br>• Russia: Disconnection tests for sovereign 'RuNet' seeking physical network separation. Evaluates domestic substitution (e.g. VK) vs. lack of competition, innovation stagnation, and an estimated $12.14B in 30-day blackout damages under the COST model.<br><br>• China: The Great Firewall operates as a porous protectionist filter that fostered domestic champions (Alibaba, Tencent, Baidu) and forced Apple into a $1B domestic investment, but imposes huge government overhead (2 million thought-police monitors), startup ambiguity, and risk of scientific brain drain due to blocked global research platforms."
         },
         {
-          heading: "Policy & Economic Takeaways",
-          text: "The paper proposes that open internet infrastructure is not merely a social utility but a foundational macroeconomic asset. Policymakers face significant deadweight economic loss when implementing digital barriers, with long-term technological divergence outpacing short-term regulatory objectives."
+          heading: "Evaluation of the NetBlocks / Brookings COST Tool",
+          text: "The paper analyzes the NetBlocks / Brookings Cost of Shutdown Tool (COST). While effective for estimating digital economy disruption, the model has significant blind spots: it severely underestimates losses in developing economies because it fails to capture indirect hits to non-digital sectors like agriculture, garment manufacturing, transport logistics, and contractual labor wages that must be paid regardless of outages."
         }
       ]
     },
     dyslexia: {
-      badge: "Assistive Technology & Cognitive Science",
-      title: "To What Extent Can Playing an Educational Game Help People Struggling with Dyslexia?",
-      author: "Alexandru Mihalcea-Calinescu",
+      badge: "HPQ Project · Unity 3D & C#",
+      title: ".XIA: To What Extent Can Playing an Educational Game Help People Struggling with Dyslexia?",
+      author: "Alexandru Mihalcea-Calinescu (with Tudor Bunescu & Andrei Ghigea)",
+      pdfUrl: "docs/HPQ_Dyslexia_Educational_Game.pdf",
       sections: [
         {
-          heading: "Abstract & Background",
-          text: "Developmental dyslexia affects phonological processing, working memory, and lexical retrieval. This paper explores human-computer interaction (HCI) paradigms and gamified pedagogical mechanics designed to augment standard multisensory remedial programs for individuals experiencing dyslexia."
+          heading: "Problem & Educational Premise",
+          text: "Traditional literacy and spelling drills often induce boredom and reading avoidance in children with dyslexia. The project tests whether an intuitive, lightweight 2D educational game can maintain high engagement and improve spelling recall through low-stress interactive mechanics."
         },
         {
-          heading: "Neurocognitive & Gameplay Analysis",
-          text: "By examining targeted spatial-temporal game loops, adaptive typographic rendering (such as OpenDyslexic and specialized letter spacing), and real-time auditory feedback loops, the study assesses cognitive neuroplasticity gains across phoneme-grapheme mapping and visual tracking endurance."
+          heading: "Game Mechanics & Learning Payload",
+          text: "Built in Unity 3D / 2D using compiled C#. The game adapts Flappy Bird flight controls (using spacebar or touch controls to navigate between obstacles). Checkpoints deliver a learning payload: the algorithm pulls a word from an array of 496 common 5-letter words, splices the word into individual scrambled letter tiles, and prompts the child to drag and drop the tiles into the correct sequence. The algorithm validates the spelling before allowing the player to advance. High score tracking is saved on Game Over screens to motivate self-improvement."
         },
         {
-          heading: "Results & Recommendations",
-          text: "Results show that structured gamified intervention significantly mitigates reading avoidance behavior, reinforces cognitive stamina, and provides scalable non-stigmatizing tools for classroom and home educational environments."
+          heading: "Dyslexia-Focused UI & Cognitive Design",
+          text: "• Color Ergonomics: Warm yellow-to-orange background gradient and yellow icon frames were chosen based on ACM SIGACCESS 2017 research by Luz Rello & Jeffrey Bigham ('Good Background Colors for Readers'), helping dyslexic readers perceive text more easily while mitigating blue-light circadian disruption.<br><br>• Visual Contrast: A bright blue bird sprite provides high visual contrast against the warm scene.<br><br>• Letter Tiles: Scrabble-style letter tiles with drag-and-drop mechanics reduce technical supervision and cognitive overhead.<br><br>• Calming Audio: Uses a low-volume royalty-free instrumental soundtrack (classical pop) to calm players and enhance concentration, paired with gentle parallax background scrolling.<br><br>• Performance: Written in compiled C# for smooth framerates on lower-spec hardware."
         }
       ]
     }
@@ -157,7 +159,13 @@ document.addEventListener('DOMContentLoaded', () => {
         modalContent.innerHTML = `
           <span class="modal-header-badge">${data.badge}</span>
           <h3 class="modal-article-title">${data.title}</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">By <strong>${data.author}</strong></p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">By <strong>${data.author}</strong></p>
+          <div style="margin-bottom: 20px;">
+            <a href="${data.pdfUrl}" target="_blank" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download Full Attached Essay (PDF)</span>
+            </a>
+          </div>
           ${sectionsHTML}
         `;
 
