@@ -125,13 +125,13 @@ document.addEventListener('DOMContentLoaded', () => {
       badge: "HPQ · Grade A · Unity3D & C#",
       title: ".XIA: To What Extent Can Playing an Educational Game Help People Struggling with Dyslexia?",
       author: "Alexandru Mihalcea-Calinescu (with Tudor Bunescu & Andrei Ghigea)",
-      pdfUrl: "docs/HPQ_Dyslexia_Educational_Game.pdf",
-      buildsUrl: "docs/Builds.zip",
-      videoUrl: "docs/XIA_Gameplay_Demo.mp4",
+      pdfUrl: "https://alex20137.github.io/portfolio/docs/HPQ_Dyslexia_Educational_Game.pdf",
+      buildsUrl: "https://alex20137.github.io/portfolio/docs/Builds.zip",
+      videoUrl: "https://alex20137.github.io/portfolio/docs/XIA_Gameplay_Demo.mp4",
       sections: [
         {
           heading: "Problem & Educational Premise",
-          text: "Traditional literacy and spelling drills often induce boredom and reading avoidance in children with dyslexia. The project tests whether an intuitive, lightweight educational game can maintain high engagement and improve spelling recall through low-stress interactive mechanics."
+          text: "Traditional literacy and spelling drills often induce boredom and reading avoidance in children with dyslexia. The project was designed to explore how an intuitive, lightweight educational game can maintain high engagement and support spelling recall through low-stress interactive mechanics."
         },
         {
           heading: "Game Mechanics & Learning Payload",
