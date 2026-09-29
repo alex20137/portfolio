@@ -422,4 +422,77 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealTargets.forEach(el => revealObserver.observe(el));
   }
+
+  // 15. Custom Interactive Cursor
+  const cursorDot = document.getElementById('cursorDot');
+  const cursorRing = document.getElementById('cursorRing');
+
+  if (cursorDot && cursorRing && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    let mouseX = -100;
+    let mouseY = -100;
+    let ringX = -100;
+    let ringY = -100;
+    let isVisible = false;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      if (!isVisible) {
+        cursorDot.style.opacity = '1';
+        cursorRing.style.opacity = '1';
+        ringX = mouseX;
+        ringY = mouseY;
+        isVisible = true;
+      }
+
+      cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+    }, { passive: true });
+
+    window.addEventListener('mouseleave', () => {
+      cursorDot.style.opacity = '0';
+      cursorRing.style.opacity = '0';
+      isVisible = false;
+    });
+
+    window.addEventListener('mouseenter', () => {
+      cursorDot.style.opacity = '1';
+      cursorRing.style.opacity = '1';
+      isVisible = true;
+    });
+
+    // Smooth lerp loop for the outer cursor ring
+    const renderCursor = () => {
+      if (isVisible) {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        cursorRing.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+      }
+      requestAnimationFrame(renderCursor);
+    };
+    requestAnimationFrame(renderCursor);
+
+    // Interactive element hover state
+    const interactiveSelectors = 'a, button, input, textarea, .card, .chip, .metric-card, .filter-btn, .lang-card, [role="button"]';
+
+    document.addEventListener('mouseover', (e) => {
+      if (e.target.closest(interactiveSelectors)) {
+        document.body.classList.add('cursor-hover');
+      }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+      if (e.target.closest(interactiveSelectors)) {
+        document.body.classList.remove('cursor-hover');
+      }
+    });
+
+    document.addEventListener('mousedown', () => {
+      document.body.classList.add('cursor-active');
+    });
+
+    document.addEventListener('mouseup', () => {
+      document.body.classList.remove('cursor-active');
+    });
+  }
 });

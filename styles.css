@@ -88,6 +88,91 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* ==========================================================================
+   Custom Interactive Cursor
+   ========================================================================== */
+
+.custom-cursor-dot,
+.custom-cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: 9999;
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.3s ease;
+}
+
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-secondary);
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.8);
+  transition: opacity 0.3s ease, transform 0.12s ease-out, background-color 0.2s ease;
+}
+
+.custom-cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(96, 165, 250, 0.45);
+  background: rgba(59, 130, 246, 0.04);
+  transition: opacity 0.3s ease, width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              background-color 0.25s ease;
+}
+
+[data-theme="light"] .custom-cursor-dot {
+  background-color: var(--accent-primary);
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+}
+
+[data-theme="light"] .custom-cursor-ring {
+  border-color: rgba(37, 99, 235, 0.45);
+  background: rgba(37, 99, 235, 0.04);
+}
+
+/* Hovering interactive elements */
+body.cursor-hover .custom-cursor-ring {
+  width: 52px;
+  height: 52px;
+  border-color: var(--accent-primary);
+  background: rgba(59, 130, 246, 0.12);
+}
+
+body.cursor-hover .custom-cursor-dot {
+  transform: scale(1.6);
+  background-color: #ffffff;
+}
+
+[data-theme="light"] body.cursor-hover .custom-cursor-dot {
+  background-color: var(--accent-primary);
+}
+
+/* Click / Active state */
+body.cursor-active .custom-cursor-ring {
+  width: 26px;
+  height: 26px;
+  border-color: var(--accent-secondary);
+}
+
+/* Touch & Reduced-Motion accessibility */
+@media (pointer: coarse), (hover: none) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+}
+
 /* Background Ambient Lighting */
 .glow-orb {
   position: fixed;
