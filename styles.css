@@ -143,6 +143,18 @@ body {
   background: rgba(248, 250, 252, 0.85);
 }
 
+.scroll-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--accent-gradient);
+  z-index: 120;
+  transition: width 0.08s linear;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
+}
+
 .header-container {
   display: flex;
   align-items: center;
@@ -326,12 +338,50 @@ body {
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: var(--transition);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
   border-color: var(--border-highlight);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md), 0 0 24px rgba(59, 130, 246, 0.1);
+  transform: translateY(-3px);
+}
+
+[data-theme="light"] .card:hover {
+  box-shadow: var(--shadow-md), 0 0 20px rgba(37, 99, 235, 0.08);
+}
+
+/* Card interactive mouse spotlight */
+.card::before, .metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: radial-gradient(550px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(96, 165, 250, 0.09), transparent 50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.card:hover::before, .metric-card:hover::before {
+  opacity: 1;
+}
+
+.card > *, .metric-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="light"] .card::before, [data-theme="light"] .metric-card::before {
+  background: radial-gradient(550px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(37, 99, 235, 0.06), transparent 50%);
 }
 
 /* ==========================================================================
@@ -479,12 +529,17 @@ body {
   border-radius: var(--radius-md);
   padding: 22px 18px;
   text-align: left;
-  transition: var(--transition);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .metric-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: var(--border-highlight);
+  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.4), 0 0 16px rgba(59, 130, 246, 0.12);
 }
 
 .metric-value {
@@ -1066,7 +1121,12 @@ body {
 
 .lang-card:hover {
   border-color: var(--border-highlight);
-  transform: translateY(-2px);
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="light"] .lang-card:hover {
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .lang-card-header {
@@ -1127,7 +1187,8 @@ body {
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   font-weight: 500;
-  transition: var(--transition);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
 }
 
 [data-theme="light"] .chip {
@@ -1135,8 +1196,11 @@ body {
 }
 
 .chip:hover {
-  border-color: var(--border-highlight);
-  transform: translateY(-1px);
+  border-color: var(--accent-secondary);
+  color: var(--text-primary);
+  background: rgba(59, 130, 246, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.18);
 }
 
 .chip.highlight-chip {
@@ -1613,6 +1677,78 @@ body {
 }
 
 /* ==========================================================================
+   Interactive UI Extras & Scroll Animations
+   ========================================================================== */
+
+/* Copy button feedback */
+.copy-btn.copied {
+  background: rgba(34, 197, 94, 0.18) !important;
+  color: #4ade80 !important;
+  border-color: rgba(34, 197, 94, 0.45) !important;
+  transform: scale(1.05);
+}
+
+/* Floating Back to Top Button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 90;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+  color: #ffffff;
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* Scroll reveal classes */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
    Print Stylesheet (CV / Resume Output)
    ========================================================================== */
 
@@ -1625,6 +1761,8 @@ body {
 
   .glow-orb,
   .header,
+  .scroll-progress-bar,
+  .back-to-top-btn,
   .filter-bar,
   .hero-cta-group,
   .copy-btn,

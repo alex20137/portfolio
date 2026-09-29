@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 5. Copy to Clipboard functionality
+  // 5. Copy to Clipboard functionality with button state animation
   const copyButtons = document.querySelectorAll('.copy-btn');
   copyButtons.forEach(btn => {
     btn.addEventListener('click', async () => {
@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (textToCopy) {
         try {
           await navigator.clipboard.writeText(textToCopy);
-          showToast(`Copied "${textToCopy}" to clipboard!`);
         } catch (err) {
           // Fallback
           const textArea = document.createElement('textarea');
@@ -88,8 +87,17 @@ document.addEventListener('DOMContentLoaded', () => {
           textArea.select();
           document.execCommand('copy');
           document.body.removeChild(textArea);
-          showToast(`Copied "${textToCopy}" to clipboard!`);
         }
+        showToast(`Copied "${textToCopy}" to clipboard!`);
+
+        // Button visual feedback
+        const originalText = btn.textContent;
+        btn.textContent = '✓ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
       }
     });
   });
@@ -309,4 +317,109 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 10. Reading Progress Indicator
+  const progressBar = document.getElementById('scrollProgressBar');
+  if (progressBar) {
+    const updateProgress = () => {
+      const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollTotal > 0) {
+        const progress = (window.pageYOffset / scrollTotal) * 100;
+        progressBar.style.width = `${Math.min(progress, 100)}%`;
+      }
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  // 11. Floating Back to Top Button
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 450) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // 12. Interactive Mouse Spotlight on Cards
+  const interactiveCards = document.querySelectorAll('.card, .metric-card');
+  interactiveCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+
+  // 13. Metric Stat Count-Up Animation
+  const metricsSection = document.querySelector('.metrics-grid');
+  if (metricsSection && 'IntersectionObserver' in window) {
+    let animated = false;
+    const animateCounter = () => {
+      const metricValues = document.querySelectorAll('.metric-value');
+      metricValues.forEach(valEl => {
+        const text = valEl.textContent.trim();
+        const match = text.match(/^(\d+)(.*)$/);
+        if (match && parseInt(match[1], 10) >= 100) {
+          const targetNum = parseInt(match[1], 10);
+          const suffix = match[2] || '';
+          const duration = 1200;
+          const startTime = performance.now();
+
+          const updateCounter = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const currentNum = Math.floor(easeOut * targetNum);
+            valEl.textContent = `${currentNum}${suffix}`;
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              valEl.textContent = `${targetNum}${suffix}`;
+            }
+          };
+          requestAnimationFrame(updateCounter);
+        }
+      });
+    };
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+          animated = true;
+          animateCounter();
+          counterObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counterObserver.observe(metricsSection);
+  }
+
+  // 14. Subtle Scroll Reveal Animations
+  if ('IntersectionObserver' in window) {
+    const revealTargets = document.querySelectorAll('.section-header, .timeline-item, .research-card, .edu-card, .activity-card, .pillar-card, .skills-column, .contact-card');
+    revealTargets.forEach(el => el.classList.add('reveal-item'));
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    revealTargets.forEach(el => revealObserver.observe(el));
+  }
 });

@@ -64,6 +64,7 @@
 
   <!-- Header / Navigation -->
   <header class="header">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     <div class="container header-container">
       <a href="#hero" class="brand-logo" aria-label="Alexandru Mihalcea-Calinescu Home">
         <span class="logo-badge">AM</span>
@@ -131,8 +132,8 @@
         </div>
 
         <div class="hero-sub-badges">
-          <span class="sub-badge">🤖 BSML Participant</span>
-          <span class="sub-badge">⚡ Hephaestus AI Participant</span>
+          <span class="sub-badge">🤖 BSML Member</span>
+          <span class="sub-badge">⚡ Hephaestus AI Member</span>
         </div>
 
         <h1 class="hero-title">
@@ -206,7 +207,7 @@
               I am a first-year student studying <strong>Economics, Management and Computer Science</strong> at <strong>Università Bocconi</strong> in Milan. Prior to Bocconi, I completed my British Curriculum A Levels at Avenor College in Bucharest with straight As in Economics, Mathematics, Computer Science, History, and an Extended Project Qualification (EPQ) analyzing the economic costs of government internet blackouts.
             </p>
             <p>
-              My background combines corporate finance and technical development. At <strong>PwC Romania</strong>, I worked as an M&amp;A intern researching business models and financial statements across 20+ companies to build trading comps and precedent transaction decks. I have also completed insight programmes at <strong>Genpact</strong> and <strong>IB Cargo</strong>, developed web front-ends at <strong>Eau de Web</strong>, previously compiled custom LineageOS builds with security updates and TWRP recovery adaptations (SM-T825), engineered assistive accessibility software (FocusAid) for the BAINSA Hackathon 2026, developed educational software in Unity3D (C#), and authored research in economics and accessibility. At Bocconi, I participate in student societies including <strong>BSML</strong> (Bocconi Students for Machine Learning) and <strong>Hephaestus</strong> (Applied AI Association).
+              My background combines corporate finance and technical development. At <strong>PwC Romania</strong>, I worked as an M&amp;A intern researching business models and financial statements across 20+ companies to build trading comps and precedent transaction decks. I have also completed insight programmes at <strong>Genpact</strong> and <strong>IB Cargo</strong>, developed web front-ends at <strong>Eau de Web</strong>, previously compiled custom LineageOS builds with security updates and TWRP recovery adaptations (SM-T825), engineered assistive accessibility software (FocusAid) for the BAINSA Hackathon 2026, developed educational software in Unity3D (C#), and authored research in economics and accessibility. At Bocconi, I am a member of student societies <strong>BSML</strong> (Bocconi Students for Machine Learning) and <strong>Hephaestus</strong> (Applied AI Association).
             </p>
             <div class="contact-quick-bar">
               <a href="mailto:alex.mihalcea12@gmail.com" class="contact-pill" title="Click to email">
@@ -559,7 +560,7 @@
               </div>
               <div class="qual-item">
                 <div class="qual-label">Student Societies:</div>
-                <div class="qual-val">Participant in <strong>BSML</strong> (Bocconi Students for Machine Learning) and <strong>Hephaestus</strong> (Applied AI Association).</div>
+                <div class="qual-val">Member of <strong>BSML</strong> (Bocconi Students for Machine Learning) and <strong>Hephaestus</strong> (Applied AI Association).</div>
               </div>
             </div>
           </div>
@@ -712,8 +713,8 @@
             <div class="skill-category">
               <div class="cat-label">Bocconi University Societies</div>
               <div class="chips-container">
-                <span class="chip">BSML (Bocconi Students for Machine Learning) — Participant</span>
-                <span class="chip">Hephaestus (Applied AI Association) — Participant</span>
+                <span class="chip">BSML (Bocconi Students for Machine Learning) — Member</span>
+                <span class="chip">Hephaestus (Applied AI Association) — Member</span>
               </div>
             </div>
 
@@ -878,6 +879,11 @@
 
   <!-- Toast notification -->
   <div class="toast" id="toastNotification" role="alert"></div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top" title="Scroll back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
 
   <script src="script.js"></script>
 </body>
