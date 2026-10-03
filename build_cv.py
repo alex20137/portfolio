@@ -14,31 +14,31 @@ doc = docx.Document()
 section = doc.sections[0]
 section.page_width = Inches(8.27)   # 210 mm
 section.page_height = Inches(11.69) # 297 mm
-section.top_margin = Inches(0.52)
-section.bottom_margin = Inches(0.48)
-section.left_margin = Inches(0.58)
-section.right_margin = Inches(0.58)
+section.top_margin = Inches(0.42)
+section.bottom_margin = Inches(0.38)
+section.left_margin = Inches(0.55)
+section.right_margin = Inches(0.55)
 
 style = doc.styles['Normal']
 font = style.font
 font.name = 'Liberation Serif'
-font.size = Pt(10.5)
+font.size = Pt(10)
 font.color.rgb = RGBColor(0, 0, 0)
 
 def add_header(name, email, phone, linkedin_text):
     p_name = doc.add_paragraph()
     p_name.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p_name.paragraph_format.space_before = Pt(0)
-    p_name.paragraph_format.space_after = Pt(2)
+    p_name.paragraph_format.space_after = Pt(1)
     p_name.paragraph_format.line_spacing = 1.0
     r_name = p_name.add_run(name)
     r_name.font.name = 'Liberation Serif'
-    r_name.font.size = Pt(22)
+    r_name.font.size = Pt(21)
 
     p_contact = doc.add_paragraph()
     p_contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p_contact.paragraph_format.space_before = Pt(0)
-    p_contact.paragraph_format.space_after = Pt(6)
+    p_contact.paragraph_format.space_after = Pt(4)
     p_contact.paragraph_format.line_spacing = 1.0
     
     parts = []
@@ -48,22 +48,22 @@ def add_header(name, email, phone, linkedin_text):
     if contact_text:
         r = p_contact.add_run(contact_text + " | ")
         r.font.name = 'Liberation Serif'
-        r.font.size = Pt(10)
+        r.font.size = Pt(9.5)
     
     r_li = p_contact.add_run(linkedin_text)
     r_li.font.name = 'Liberation Serif'
-    r_li.font.size = Pt(10)
+    r_li.font.size = Pt(9.5)
     r_li.font.underline = True
 
 def add_section_title(title):
     p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(6.5)
-    p.paragraph_format.space_after = Pt(2)
+    p.paragraph_format.space_before = Pt(4.5)
+    p.paragraph_format.space_after = Pt(1.5)
     p.paragraph_format.line_spacing = 1.0
     p.paragraph_format.keep_with_next = True
     r = p.add_run(title)
     r.font.name = 'Liberation Serif'
-    r.font.size = Pt(10.5)
+    r.font.size = Pt(10)
     r.font.bold = True
     r.font.underline = True
 
@@ -72,7 +72,7 @@ def add_entry_heading(org, location, role, date):
     table.alignment = WD_TABLE_ALIGNMENT.CENTER
     table.autofit = False
     
-    col_widths = [Inches(5.25), Inches(1.86)]
+    col_widths = [Inches(5.3), Inches(1.87)]
     for row in table.rows:
         for idx, width in enumerate(col_widths):
             row.cells[idx].width = width
@@ -87,90 +87,90 @@ def add_entry_heading(org, location, role, date):
             
     # Row 0: Org (bold) + Location (bold, right)
     p00 = table.rows[0].cells[0].paragraphs[0]
-    p00.paragraph_format.space_before = Pt(2)
+    p00.paragraph_format.space_before = Pt(1.2)
     p00.paragraph_format.space_after = Pt(0)
-    p00.paragraph_format.line_spacing = 1.03
+    p00.paragraph_format.line_spacing = 1.02
     r00 = p00.add_run(org)
     r00.font.name = 'Liberation Serif'
-    r00.font.size = Pt(10.5)
+    r00.font.size = Pt(10)
     r00.font.bold = True
 
     p01 = table.rows[0].cells[1].paragraphs[0]
     p01.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    p01.paragraph_format.space_before = Pt(2)
+    p01.paragraph_format.space_before = Pt(1.2)
     p01.paragraph_format.space_after = Pt(0)
-    p01.paragraph_format.line_spacing = 1.03
+    p01.paragraph_format.line_spacing = 1.02
     r01 = p01.add_run(location)
     r01.font.name = 'Liberation Serif'
-    r01.font.size = Pt(10.5)
+    r01.font.size = Pt(10)
     r01.font.bold = True
 
     # Row 1: Role (italic) + Date (regular, right)
     p10 = table.rows[1].cells[0].paragraphs[0]
     p10.paragraph_format.space_before = Pt(0)
     p10.paragraph_format.space_after = Pt(0.5)
-    p10.paragraph_format.line_spacing = 1.03
+    p10.paragraph_format.line_spacing = 1.02
     r10 = p10.add_run(role)
     r10.font.name = 'Liberation Serif'
-    r10.font.size = Pt(10)
+    r10.font.size = Pt(9.5)
     r10.font.italic = True
 
     p11 = table.rows[1].cells[1].paragraphs[0]
     p11.alignment = WD_ALIGN_PARAGRAPH.RIGHT
     p11.paragraph_format.space_before = Pt(0)
     p11.paragraph_format.space_after = Pt(0.5)
-    p11.paragraph_format.line_spacing = 1.03
+    p11.paragraph_format.line_spacing = 1.02
     r11 = p11.add_run(date)
     r11.font.name = 'Liberation Serif'
-    r11.font.size = Pt(10)
+    r11.font.size = Pt(9.5)
     r11.font.italic = False
 
-def add_bullet(text, bold_prefix=None, space_after=Pt(1.0)):
+def add_bullet(text, bold_prefix=None, space_after=Pt(0.6)):
     p = doc.add_paragraph()
     p.paragraph_format.left_indent = Inches(0.24)
     p.paragraph_format.first_line_indent = Inches(-0.14)
     p.paragraph_format.space_before = Pt(0)
     p.paragraph_format.space_after = space_after
-    p.paragraph_format.line_spacing = 1.04
+    p.paragraph_format.line_spacing = 1.02
     
     r_bullet = p.add_run("• ")
     r_bullet.font.name = 'Liberation Serif'
-    r_bullet.font.size = Pt(10)
+    r_bullet.font.size = Pt(9.5)
     
     if bold_prefix:
         r_pre = p.add_run(bold_prefix)
         r_pre.font.name = 'Liberation Serif'
-        r_pre.font.size = Pt(10)
+        r_pre.font.size = Pt(9.5)
         r_pre.font.bold = True
         
     r_text = p.add_run(text)
     r_text.font.name = 'Liberation Serif'
-    r_text.font.size = Pt(10)
+    r_text.font.size = Pt(9.5)
 
-def add_subheading(text, space_before=Pt(2.5), space_after=Pt(0.5)):
+def add_subheading(text, space_before=Pt(2), space_after=Pt(0.5)):
     p = doc.add_paragraph()
     p.paragraph_format.space_before = space_before
     p.paragraph_format.space_after = space_after
-    p.paragraph_format.line_spacing = 1.03
+    p.paragraph_format.line_spacing = 1.02
     r = p.add_run(text)
     r.font.name = 'Liberation Serif'
-    r.font.size = Pt(10)
+    r.font.size = Pt(9.5)
     r.font.bold = True
 
-def add_skill_line(label, content, space_after=Pt(1.5)):
+def add_skill_line(label, content, space_after=Pt(1)):
     p = doc.add_paragraph()
     p.paragraph_format.space_before = Pt(0)
     p.paragraph_format.space_after = space_after
-    p.paragraph_format.line_spacing = 1.04
+    p.paragraph_format.line_spacing = 1.02
     
     r_lbl = p.add_run(label + ": ")
     r_lbl.font.name = 'Liberation Serif'
-    r_lbl.font.size = Pt(10)
+    r_lbl.font.size = Pt(9.5)
     r_lbl.font.italic = True
     
     r_cnt = p.add_run(content)
     r_cnt.font.name = 'Liberation Serif'
-    r_cnt.font.size = Pt(10)
+    r_cnt.font.size = Pt(9.5)
 
 # Header
 add_header("Alexandru Mihalcea-Calinescu", "alex.mihalcea12@gmail.com", "+40 722 237 081", "LinkedIn")
@@ -202,8 +202,11 @@ add_entry_heading("BAINSA Hackathon 2026", "Milan, Italy", "FocusAid - Applied A
 add_bullet("Engineered an AI accessibility web app for neurodivergent students with real-time lecture catch-up and AI summaries")
 add_bullet("Integrated private client-side attention tracking via MediaPipe and on-device WebGPU LLM inference")
 
-add_entry_heading("Genpact & IB Cargo", "Bucharest, Romania", "Operations & Logistics Insight Programmes", "Jun 2024 - Jun 2025")
-add_bullet("Reviewed operational workflows across order-to-cash, accounts payable, payroll, contract administration, and international supply-chain logistics through cross-departmental sessions with senior leaders")
+add_entry_heading("Genpact", "Bucharest, Romania", "Operations Insight Programme", "Jun 2025")
+add_bullet("Reviewed workflows across order-to-cash, accounts payable, payroll, contract administration and vendor management through sessions with senior operations leaders")
+
+add_entry_heading("IB Cargo", "Bucharest, Romania", "Transportation and Logistics Insight Programme", "Jun 2024")
+add_bullet("Reviewed transportation and supply-chain workflows through cross-departmental sessions covering operational challenges and logistics coordination")
 
 add_entry_heading("Eau de Web", "Bucharest, Romania", "Summer Intern - Software Development", "Jun 2023")
 add_bullet("Contributed to front-end development of a university-advisory platform, implementing UI components using HTML and CSS")
