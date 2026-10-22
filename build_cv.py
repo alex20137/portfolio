@@ -228,7 +228,7 @@ add_bullet("To What Extent Can Playing an Educational Game Help People Strugglin
 # SKILLS & INTERESTS
 add_section_title("SKILLS & INTERESTS")
 add_skill_line("Languages", "Romanian (Native), English (Fluent; IELTS 8.5), Spanish (DELE B1), Portuguese (Intermediate), Italian (Basic)")
-add_skill_line("Technical Skills", "Python, TypeScript, Next.js, React, WebGPU, MediaPipe, Git, HTML/CSS, Excel, PowerPoint")
+add_skill_line("Technical Skills", "Python (Intermediate), Excel (Basic), AI workflows, agent harnesses & local LLMs (Ollama, OpenClaw, Antigravity)")
 add_skill_line("Interests", "Table football, table tennis, custom PC building, open-source OS, European history")
 
 output_docx = "/Users/alexmih/portfolio/docs/Alexandru_Mihalcea_Calinescu_CV.docx"
