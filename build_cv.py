@@ -178,7 +178,7 @@ add_header("Alexandru Mihalcea-Calinescu", "alex.mihalcea12@gmail.com", "+40 722
 # EDUCATION
 add_section_title("EDUCATION")
 add_entry_heading("Università Bocconi", "Milan, Italy", "BSc in Economics, Management and Computer Science", "Sep 2026 - Present")
-add_bullet("Student Societies: Member of BSML (Machine Learning) and Hephaestus (Applied AI Association).")
+add_bullet("Student Societies: Member of BSQF (Quantitative Finance), BSML (Machine Learning), and Hephaestus (Applied AI).")
 
 add_entry_heading("Avenor College", "Bucharest, Romania", "A Levels, British Curriculum", "Jun 2026")
 add_bullet("Economics (A), Mathematics (A), Computer Science (A), History (A), Extended Project Qualification (A)")
